@@ -27,12 +27,12 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-//Route::get('/register', [AuthController::class, 'create']);
-//Route::post('/register/store', [AuthController::class, 'store']);
-//Route::get('/login/index', [AuthController::class, 'loginindex']); 
-//Route::post('/login', [AuthController::class, 'login']); 
+Route::get('/register', [AuthController::class, 'create']);
+Route::post('/register/store', [AuthController::class, 'store']);
+Route::get('/login/index', [AuthController::class, 'loginindex']); 
+Route::post('/login', [AuthController::class, 'login']); 
 Route::group(['middleware' => ['auth']], function(){
-    //Route::get('/logout', [AuthController::class, 'logout']);
+    Route::get('/logout', [AuthController::class, 'logout']);
     Route::get('/index', [AttendanceController::class, 'index']);
     Route::post('/attendancein', [AttendanceController::class, 'attendancein']);
     Route::post('/attendanceout', [AttendanceController::class, 'attendanceout']);
