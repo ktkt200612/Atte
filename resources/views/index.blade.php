@@ -11,8 +11,13 @@
   <form action="/attendancein" method="POST">
   @csrf
     <div>
-      <input type="submit"  value="勤務開始"　name="attendancein">
-      
+      <input type="submit"  value="勤務開始"　>
+    <div>
+  </form>
+  <form action="/attendanceout" method="POST">
+  @csrf
+    <div>
+      <input type="submit"  value="勤務終了"　>
     <div>
   </form>
   

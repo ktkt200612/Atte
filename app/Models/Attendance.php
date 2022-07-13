@@ -11,9 +11,10 @@ class Attendance extends Model
 
 
     protected $guarded = [
-        'id', 'user_id', 'date',  'attendance_in',  'attendance_out','created_at', 'updated_at'
+        'id'
     ];
-
+    //ホワイトリスト.$fillableに指定したカラムのみ、create()やfill()、update()で値が代入されます。
+    //ブラックリスト。$guardedに指定したカラムのみ、create()やfill()、update()で値が代入されません。
     public function user(){ 
         return $this->belongsTo('App\Models\User');
     }
