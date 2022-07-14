@@ -16,7 +16,7 @@ class AttendanceController extends Controller
     }
     public function attendancein()
     {
-        $user = Auth::user();
+        $user = Auth::id();//Authのidのみ取得）
         $date = Carbon::today()->format('Y-m-d');
         $time = Carbon::now();
         
@@ -31,16 +31,14 @@ class AttendanceController extends Controller
 
     public function attendanceout()
     {
-        $user = Auth::user();
-        $date = Carbon::today()->format('Y-m-d');
-        $time = Carbon::now();
+        $user = Auth::user();//Authのuserカラム全て取得
+        $attendance = Attendance::where('user_id', $user->id)->latest()->first(); //このログインユーザーのAttendanceの最新のレコードのみを取得
         
-        $form = [
-            'user_id' => $user,
-            'date'  => $date,
-            'attendance_in' => $time,
-        ];
-        Attendance::create($form);
+        $attendance->update([
+            'attendance_out' => Carbon::now()
+        ]);     //$attendanceの中のattendance_outを書き換える
         return redirect('/index');
     }
+
+    
 }

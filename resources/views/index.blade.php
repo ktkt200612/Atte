@@ -20,6 +20,19 @@
       <input type="submit"  value="勤務終了"　>
     <div>
   </form>
+  <form action="/restin" method="POST">
+  @csrf
+    <div>
+      <input type="submit"  value="休憩開始"　>
+    <div>
+  </form>
+  <form action="/restout" method="POST">
+  @csrf
+    <div>
+      <input type="submit"  value="休憩終了"　>
+    <div>
+  </form>
+  
   
 </body>
 </html>
