@@ -31,10 +31,9 @@ class AttendanceController extends Controller
 
     public function attendanceout()
     {
-        $user = Auth::user();//Authのuserカラム全て取得
-        $attendance = Attendance::where('user_id', $user->id)->latest()->first(); //このログインユーザーのAttendanceの最新のレコードのみを取得
-        
-        $attendance->update([
+        $user = Auth::user();//Authのuserカラム全て取得(userのとこがidならidのみ取得)
+        $latestAttendance = Attendance::where('user_id', $user->id)->latest()->first(); //このログインユーザーのAttendanceの最新のレコードのみを取得
+        $latestAttendance->update([
             'attendance_out' => Carbon::now()
         ]);     //$attendanceの中のattendance_outを書き換える
         return redirect('/index');

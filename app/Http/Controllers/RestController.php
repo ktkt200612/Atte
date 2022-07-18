@@ -27,9 +27,10 @@ class RestController extends Controller
     public function restout()
     {
         $user = Auth::user();//Authのuserカラム全て取得
-        $rest = Rest::where('user_id', $user->id)->latest()->first(); //このログインユーザーのRestの最新のレコードのみを取得
-        
-        $rest->update([
+        $latestAttendance = Attendance::where('user_id', $user->id)->latest()->first(); //ログイン中のユーザーのidと一致するidをもつユーザーの、Attendanceの最新のレコードのみを取得(restとuserは直接繋がっていないため、Attendanceから検索)
+        $attendanceId = $latestAttendance->id;
+        $latestRest = Rest::where('attendance_id', $attendanceId)->latest()->first(); //このattendance_idを持つrestの最新のレコードのみを取得
+        $latestRest->update([
             'rest_out' => Carbon::now()
         ]);     //$restの中のrest_outを書き換える
         return redirect('/index');
