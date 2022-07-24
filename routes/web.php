@@ -26,12 +26,12 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/index', [AttendanceController::class, 'index']);
     Route::post('/attendancein', [AttendanceController::class, 'attendancein']);
     Route::post('/attendanceout', [AttendanceController::class, 'attendanceout']);
     Route::get('/date', [AttendanceController::class, 'dateindex']);
+    Route::post('/date', [AttendanceController::class, 'otherday']);
     Route::post('/restin', [RestController::class, 'restin']);
-    Route::post('/restout', [RestController::class, 'restout']);
+    Route::post('/restout', [RestController::class, 'restout']); 
 });

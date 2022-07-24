@@ -17,8 +17,8 @@ class CreateAttendancesTable extends Migration
             $table->id();
             $table->string('user_id');
             $table->date('date');
-            $table->dateTime('attendance_in')->nullable();
-            $table->dateTime('attendance_out')->nullable();
+            $table->time('attendance_in')->nullable();
+            $table->time('attendance_out')->nullable();
             $table->timestamp('created_at');
             $table->timestamp('updated_at')->nullable();
         });

@@ -13,14 +13,14 @@ class RestController extends Controller
     public function restin()
     {
         $user= Auth::user();
-        $time = Carbon::now();
-        $latestAttendance = Attendance::where('user_id', $user->id)->latest()->first(); // このログインユーザーのAttendanceの最新のレコードのみを取得
+        $time = Carbon::now()->toTimeString();
+        $latestAttendance = Attendance::where('user_id', $user->id)->latest()->first(); // $user->idと同じuser_idをもつログインユーザーのAttendanceの最新のレコードのみを取得
         
         $form = [
             'attendance_id' => $latestAttendance->id,
             'rest_in' => $time,
         ];
-        Rest::create($form);
+        Rest::create($form);//Restクラスという型に沿って、データを作成
         return redirect('/index');
     }
 
@@ -31,7 +31,7 @@ class RestController extends Controller
         $attendanceId = $latestAttendance->id;
         $latestRest = Rest::where('attendance_id', $attendanceId)->latest()->first(); //このattendance_idを持つrestの最新のレコードのみを取得
         $latestRest->update([
-            'rest_out' => Carbon::now()
+            'rest_out' => Carbon::now()->toTimeString()
         ]);     //$restの中のrest_outを書き換える
         return redirect('/index');
     }
