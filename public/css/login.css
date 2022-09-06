@@ -1,0 +1,85 @@
+body {
+    width: 1300px;
+    line-height: 70px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 5px;
+}
+
+.header__title {
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 26px;
+}
+
+
+.header__nav--list {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.container {
+    background-color: rgb(249, 249, 249);
+    padding-bottom: 220px;
+}
+
+.title {
+    font-size: larger;
+    text-align: center;
+}
+
+.errors {
+    color: red;
+    padding-left: 480px;
+    line-height: 30px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.email {
+    padding: 10px 220px 10px 20px;
+}
+
+.password {
+    padding: 10px 220px 10px 20px;
+}
+
+.login {
+    padding: 10px 162px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+}
+
+.text {
+    color: rgb(207, 207, 207);
+    font-weight: lighter;
+    line-height: 300%;
+}
+
+.register {
+    color: blue;
+    line-height: 10%;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    font-size: small;
+    margin-top: -20px;
+}

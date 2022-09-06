@@ -1,0 +1,118 @@
+body {
+    width: 1300px;
+    line-height: 70px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 5px;
+}
+
+.header__title {
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 26px;
+}
+
+.header__nav--list {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.container {
+    background-color: rgb(249, 249, 249);
+    padding-bottom: 60px;
+}
+
+.date {
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+}
+
+.date__button {
+    font-size: 19px;
+    background: white;
+    border-color: blue;
+    color: blue;
+    border-width: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.date--today {
+    display: inline-block;
+    font-size: 19px;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.attendance {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+table {
+    text-align: center;
+}
+
+table th {
+    border-top: solid;
+    border-color: rgb(189, 185, 185);
+    border-width: 1px;
+    line-height: 55px;
+}
+
+table td {
+    border-top: solid;
+    border-color: rgb(189, 185, 185);
+    border-width: 1px;
+    line-height: 55px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    color: blue;
+    padding-top: 50px;
+}
+
+.pagination li {
+    padding: 0px 20px;
+    line-height: 45px;
+    text-align: center;
+    margin-right: 1px;
+}
+
+.pagination li:hover {
+    background: rgb(224, 224, 224);
+    color: white;
+}
+
+.page-item :hover {
+    background: rgb(224, 224, 224);
+    color: white;
+}
+
+.active {
+    background-color: blue;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    font-size: small;
+    margin-top: -20px;
+}
